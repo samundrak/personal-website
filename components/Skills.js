@@ -19,6 +19,10 @@ const skills = [
   "mysql",
   "html",
   "css",
+  "redux",
+  "next",
+  "gatsby",
+  "graphql",
 ];
 const Container = styled.div`
   display: flex;
