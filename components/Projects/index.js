@@ -13,12 +13,7 @@ const Projects = () => {
               {projectGroup.items.map((item) => {
                 return (
                   <div className="col col--6">
-                    <ProductCard
-                      url={item.url}
-                      img={item.img}
-                      title={item.title}
-                      description={item.description}
-                    />
+                    <ProductCard {...item} />
                   </div>
                 );
               })}

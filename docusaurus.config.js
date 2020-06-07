@@ -20,6 +20,9 @@ module.exports = {
           label: "More",
           position: "left",
         },
+        { to: "docs/experience", label: "Experience", position: "left" },
+        { to: "docs/projects", label: "Works", position: "left" },
+
         { to: "blog", label: "Notes", position: "left" },
         {
           href: "https://github.com/samundrak",
