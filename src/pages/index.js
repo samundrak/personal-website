@@ -29,14 +29,13 @@ const features = [
     imageUrl: "img/undraw_docusaurus_tree.svg",
     description: (
       <p>
-        Started working as a NodeJS|Angular developer(2015 A.D) and I fall in
+        {/* Started working as a NodeJS|Angular developer(2015 A.D) and I fall in
         love with JavaScript and its ecosystem. Before I used to play with PHP,
-        JAVA in my High School days.
-        <br />
-        <br />I have worked from product-based company to service-based agency
-        where I worked in development of projects like Realtime Dashboards, CRM,
-        CMS, Plugins, Libraries, E-Commerce, PWA, Cloud Storages, Video
-        Streaming, etc where my primary focus was in Frontend.
+        JAVA in my High School days. */}
+        I have worked from product-based company to service-based agency where I
+        worked in development of projects like Realtime Dashboards, CRM, CMS,
+        Plugins, Libraries, E-Commerce, PWA, Cloud Storages, Video Streaming,
+        etc where my primary focus was in Frontend.
       </p>
     ),
   },
