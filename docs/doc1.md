@@ -1,9 +1,10 @@
 ---
 id: doc1
 title: Style Guide
-sidebar_label: Style Guide
+sidebar_label: " "
 ---
 
+<!--
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
 
 ## Markdown Syntax
@@ -197,4 +198,4 @@ This is a caution
 
 This is a warning
 
-:::
+::: -->

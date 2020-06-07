@@ -1,13 +1,20 @@
 import React from "react";
+import ReactIcon from "@site/static/img/techs/react.svg";
+import JSIcon from "@site/static/img/techs/js.svg";
+import TsIcon from "@site/static/img/techs/typescript.svg";
+import NodeIcon from "@site/static/img/techs/nodejs.svg";
+
 export default [
   {
     date: "1 jan 2020 - current",
     role: "JavaScript Developer- CoveredBySage",
     location: "Kathmandu, Nepal",
+    website: "http://www.coveredbysage.com",
+    icon: <TsIcon />,
     description: () => (
       <ul>
         <li>
-          Use state management tool to maintain the single source of truth.
+          Use state management tool to maintain the complex data structure.
           (Redux)
         </li>
         <li>
@@ -19,14 +26,17 @@ export default [
           Optimization, Refactor and Gained Performance with things like code
           splitting, Service worker, web worker, clientside caching
         </li>
+        <li>Review code quality, maintain code standard across the team.</li>
         <li>Just Started new journey...</li>
       </ul>
     ),
   },
   {
     date: "Dec 2017 - Dec 2019",
-    role: "JavaScript Developer -  Kathmandu, Nepal",
+    role: "JavaScript Developer -  Javra Software",
     location: "Kathmandu, Nepal",
+    website: "http://www.javra.com",
+    icon: <JSIcon />,
     description: () => (
       <ul>
         <li>
@@ -38,7 +48,6 @@ export default [
           products.(Fabricjs)
         </li>
         <li>Create a plugin to be pluggable on any website.</li>
-        <li>Review code quality, maintain code standard across the team.</li>
       </ul>
     ),
   },
@@ -46,6 +55,8 @@ export default [
     date: "Jun 2016 - Dec 2017",
     role: "JavaScript Developer - Introcept Nepal ",
     location: "Lalitpur, Nepal",
+    website: "http://nepal.introcept.co/",
+    icon: <ReactIcon />,
     description: () => (
       <ul>
         <li>Part of the front end development team of their Vue web app.</li>
@@ -74,6 +85,7 @@ export default [
     date: "Mar 2015 - May 2016",
     role: "NodeJS Developer- ZyobaLabs",
     location: "Kathmandu, Nepal",
+    icon: <NodeIcon />,
     description: () => (
       <ul>
         <li>

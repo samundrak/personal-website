@@ -1,8 +1,8 @@
 module.exports = {
   someSidebar: {
     Experience: ["experience"],
-    Projects: ["doc1"],
     Background: ["my-background"],
-    "My 100 Apps": ["doc1"],
+    Projects: ["projects"],
+    "My 100 Apps": ["all-apps"],
   },
 };

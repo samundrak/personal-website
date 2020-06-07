@@ -4,7 +4,6 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { ReactComponent as IC } from "../../static/img/techs/js.svg";
 import list from "./list";
 
 const ExperienceTimeline = () => {
@@ -20,15 +19,21 @@ const ExperienceTimeline = () => {
                 borderRight: "7px solid  rgb(33, 150, 243)",
               }}
               date={experience.date}
-              iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-              icon={() => <IC />}
+              iconStyle={{ background: "white" }}
+              icon={experience.icon}
             >
-              <h3 className="vertical-timeline-element-title">
-                {experience.role}
-              </h3>
-              <h4 className="vertical-timeline-element-subtitle">
-                {experience.location}
-              </h4>
+              <a
+                href={experience.website}
+                target="_blank"
+                style={{ color: "white" }}
+              >
+                <h3 className="vertical-timeline-element-title">
+                  {experience.role}
+                </h3>
+                <h4 className="vertical-timeline-element-subtitle">
+                  {experience.location}
+                </h4>
+              </a>
               <p>{<experience.description />}</p>
             </VerticalTimelineElement>
           );
