@@ -17,10 +17,7 @@ const features = [
         in server side/devOps which kinda makes me full stack though I'm not.
         <br />
         You will find me very passionate about programming who has a keen eye
-        for new paradigms, architecture, patterns and principles{" "}
-        <small>
-          <strike>and poor in english. </strike>
-        </small>
+        for new paradigms, architecture, patterns and principles.
         <br />I love to explore new languages, indulging my time with my pet
         projects, participating in lonely hackathons and always love to tinker
         with new technologies.
