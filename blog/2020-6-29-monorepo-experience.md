@@ -12,6 +12,8 @@ tags: [monorepo, package]
 
 Monorepo is a repository pattern where we manage multiple packages in a single repository. Normally what we do is create a separate repository for each package and maintain all those packages by tracking their version and release. In Monorepo we put all of our packages in a single repository.
 
+<!--truncate-->
+
 ## Why Monorepo
 
 As mentioned above, as our project and packages grow we will be in a situation where it will be very hard to maintain every package manually. For example, we have 2 packages named `pkgA` and `pkgB` and pckgA depends on pkgB and it can be vice versa. Here if we need some modification to pkgB then we need to switch to a different repository and do some `npm link` to create dependency and link it. After we are done with changes now we have to release both packages, maintain version, maintain release, generate changelogs, and whatnot. So, to mitigate this we just add all the packages in a single repository and let the tool handle it which I will write below.
