@@ -8,8 +8,6 @@ author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd4
 tags: [monorepo, package]
 ---
 
-# Monorepo
-
 Monorepo is a repository pattern where we manage multiple packages in a single repository. Normally what we do is create a separate repository for each package and maintain all those packages by tracking their version and release. In Monorepo we put all of our packages in a single repository.
 
 <!--truncate-->
