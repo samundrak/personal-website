@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const inquirer = require("inquirer");
+const kebabcase = require("lodash.kebabcase");
 
 const userFilePath = "./user.json";
 const blogPath = path.join(__dirname, "../../blog");
@@ -39,9 +40,9 @@ tags: [${answers.tags}]
   const date = new Date();
   const fileName = `${date.getFullYear()}-${
     date.getMonth() + 1
-  }-${date.getDay()}-${answers.url || answers.title}.md`;
-  const fullPathOfBlog = `${blogPath}/${fileName}`;
+  }-${date.getDate()}-${kebabcase(answers.url || answers.title)}.md`;
 
+  const fullPathOfBlog = `${blogPath}/${fileName}`;
   fs.writeFileSync(`${fullPathOfBlog}`, data);
   console.log(`New blog file created in ${fullPathOfBlog}`);
 });
