@@ -8,11 +8,12 @@ author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd4
 tags: [solid, srp, single, responsibility]
 ---
 
-# SOLID Principle
-
 What is a SOLID principle? It was a common question asked in an interview when I applied
 for a PHP developer. This term is seen a lot in the PHP universe and JAVA too. If we search
 it on youtube then we will find that most of those videos are hosted by uncle Bob martin. The SOLID principle is a set of principles. As our codebase grows in size it can be messy, unorganized, fragile, etc. There is no proven method to make our project stable because software development is an iterative process. Things today we write can be changed tomorrow, the module we create today can no longer be fit in our codebase. That doesn’t mean we should not care about our codebase. We can apply some principle which can help us to do less refactor, fewer code changes, less dependency or organized dependency, etc.
+
+<!-- truncate -->
+
 SOLID is made up of 5 principles which are mentioned below:
 
 S - Single Responsibility principle
