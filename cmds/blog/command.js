@@ -28,7 +28,7 @@ const questions = [
 inquirer.prompt(questions).then((answers) => {
   const data = `
 ---
-id: ${answers.url || answers.title}
+id: ${kebabcase(answers.url || answers.title)}
 title: ${answers.title}
 author: ${userData.author}
 author_title: ${userData.author_title}
