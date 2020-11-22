@@ -242,3 +242,5 @@ https://softwareengineering.stackexchange.com/questions/177973/how-to-design-a-s
 [https://medium.com/quora-design/notification-system-design-99-40d70c9da028](https://medium.com/quora-design/notification-system-design-99-40d70c9da028)
 
 https://www.youtube.com/watch?v=FU4WlwfS3G0
+
+[More On JavaScript](https://www.toptal.com/javascript)
