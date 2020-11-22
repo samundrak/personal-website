@@ -9,5 +9,6 @@ tags: [typescript, generic]
 ---
 
 - You can set generic in function by doing `Function <T> trigger(event: Event<T>){ return event.target; }` and here type of Event is type `Event<T> = { target: T }`
+<!-- truncate -->
 - Normally when we call this function we will invoke the function and provide the type it expects instead of T as it doesn’t have a default type which we can do by `<T extends {}>` or `<T = {}>` or both.
 - Instead of passing it while invoking, we can call the function like this `trigger({ target: ‘blank’ })` and TypeScript will evaluate the value passed to target as it was expected to be T type. So, now TypeScript will go through all `T` and change it with `string` data type or anything you provide.

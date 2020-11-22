@@ -8,8 +8,6 @@ author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd4
 tags: [linux, cli]
 ---
 
-## Linux CLI Tips
-
 - A single dash normally means a short name of the flag. E.g ls -a
 
 - A double dash is passed to express a long flag. Ex: ls -all

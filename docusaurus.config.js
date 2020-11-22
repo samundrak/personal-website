@@ -14,20 +14,21 @@ module.exports = {
         src: "img/avataaars.svg",
       },
       links: [
+        { to: "blog", label: "Blog", position: "left" },
+        { to: "docs/experience", label: "Experience", position: "left" },
+        { to: "docs/projects", label: "Works", position: "left" },
+
+        {
+          href: "https://github.com/samundrak",
+          label: "GitHub",
+          position: "right",
+        },
+
         {
           to: "docs/",
           activeBasePath: "docs",
           label: "More",
           position: "left",
-        },
-        { to: "docs/experience", label: "Experience", position: "left" },
-        { to: "docs/projects", label: "Works", position: "left" },
-
-        { to: "blog", label: "Notes", position: "left" },
-        {
-          href: "https://github.com/samundrak",
-          label: "GitHub",
-          position: "right",
         },
       ],
     },
