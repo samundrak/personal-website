@@ -13,7 +13,7 @@ module.exports = {
         alt: "FullStack Javascript Engineer, Nepal",
         src: "img/avataaars.svg",
       },
-      links: [
+      items: [
         { to: "blog", label: "Blog", position: "left" },
         { to: "docs/experience", label: "Experience", position: "left" },
         { to: "docs/projects", label: "Works", position: "left" },
@@ -24,12 +24,12 @@ module.exports = {
           position: "right",
         },
 
-        {
-          to: "docs/",
-          activeBasePath: "docs",
-          label: "More",
-          position: "left",
-        },
+        // {
+        //   to: "docs/",
+        //   activeBasePath: "docs",
+        //   label: "More",
+        //   position: "left",
+        // },
       ],
     },
     footer: {
@@ -75,7 +75,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: "experience",
+          // homePageId: "experience",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // editUrl:

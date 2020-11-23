@@ -26,3 +26,7 @@
 .vertical-timeline.vertical-timeline-custom-line::before {
   background: #2f4f4f;
 }
+
+.hero__title {
+  font-size: 2rem;
+}
