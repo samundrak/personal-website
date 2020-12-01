@@ -8,9 +8,9 @@ author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd4
 tags: [entity, database]
 ---
 
-### Entity relationship model
-
 ER or Entity Reletionship model is used to create and model the data which is simple, non technical and easily understood by people describing a diagram with relation. It helps us to analyze requirements systematically to produce a well designed database.
+
+<!-- truncate -->
 
 ### ER diagram
 
