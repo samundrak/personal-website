@@ -14,7 +14,7 @@ module.exports = {
         src: "img/avataaars.svg",
       },
       items: [
-        { to: "blog", label: "Blog", position: "left" },
+        { to: "blog", label: "Notes", position: "left" },
         { to: "docs/experience", label: "Experience", position: "left" },
         { to: "docs/projects", label: "Works", position: "left" },
 
