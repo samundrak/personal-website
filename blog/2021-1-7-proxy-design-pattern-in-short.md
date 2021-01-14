@@ -1,6 +1,6 @@
 ---
-id: proxy-design-patter-in-short
-title: Proxy design patter in short
+id: proxy-design-pattern-in-short
+title: Proxy design pattern in short
 author: samundrak
 author_title: JavaScript Dev
 author_url: https://github.com/samundrak
