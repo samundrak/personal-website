@@ -8,6 +8,8 @@ author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd4
 tags: [design-pattern, template-method]
 ---
 
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
 # Template method pattern
 
 In the Template method pattern, we break algorithms into small methods. There can be a scenario where data may need to be processed differently.
