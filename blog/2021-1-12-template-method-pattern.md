@@ -10,7 +10,6 @@ tags: [design-pattern, template-method]
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-# Template method pattern
 
 In the Template method pattern, we break algorithms into small methods. There can be a scenario where data may need to be processed differently.
 
