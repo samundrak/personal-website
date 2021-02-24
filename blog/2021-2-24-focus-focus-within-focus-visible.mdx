@@ -1,0 +1,57 @@
+---
+id: focus-focus-within-focus-visible
+title: :focus, :focus-within and :focus-visible
+author: samundrak
+author_title: JavaScript Dev
+author_url: https://github.com/samundrak
+author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4
+tags: [accessibility, focus, focus-within, focus-visible]
+---
+
+I was pretty known with the `:focus` pseudo-class and was recently playing with it while doing some work that was related
+to keyboard navigation and interaction. As I was learning more about it I found 2 new interesting pseudo-classes.
+
+<!-- truncate -->
+
+which are `:focus-within` and `:focus-visible`. Just to make some Context `:focus` is a pseudo-class that is applied when any focusable
+input is in focus. For example when we hit the `tab` key and if it
+goes into input then we can see some kind of indication that
+this element is in focus now. But the problem here is if we want to apply
+some style if the element is on focus but only if it was
+done by keyboard or mouse then we can't do that with just `:focus`.
+Here, we can do that by `:focus-visible`.
+
+As per mdn docs, `:focus-visible` is a pseudo-class that is applied when an element matches the `:focus` pseudo-class and
+the user agent determines via heuristics that the focus should be made evident on the element. We can use this pseudo-class whenever
+we want to apply some style when the element is in the focus but only when it was tabbed via the keyboard as we may not want to focus style
+when the button is clicked by the mouse.
+
+**Example**
+
+import FocusVisible from "../components/demo/FocusVisible";
+
+<FocusVisible />
+
+```css
+> :focus-visible {
+  outline: 2px solid blue;
+}
+```
+
+Whereas `:focus-within` is a pseudo-class that can be used to apply style whenever an element or its descendent is in the focus state.
+One of the use cases of this pseudo-class can be if we want to highlight the form when any one input is on the focused state just to give a hint
+to the user that this form is actively in use.
+
+```css
+div:focus-within {
+  background: red;
+}
+```
+
+As of now `:focus-visible` is not much supported by many modern browsers. To use this we can use
+npm module `what input.
+
+### References
+
+- [https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-within)
+- [https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible](https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible)

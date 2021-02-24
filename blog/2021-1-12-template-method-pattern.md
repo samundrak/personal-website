@@ -10,8 +10,6 @@ tags: [design-pattern, template-method]
 
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-# Template method pattern
-
 In the Template method pattern, we break algorithms into small methods. There can be a scenario where data may need to be processed differently.
 
 <!-- truncate -->
@@ -63,4 +61,5 @@ mainA.mine();
 alt="System design of notification architecture"
 src={useBaseUrl("images/dp-template-method.png")}
 />
+
 _Source: Dive into design patterns_
