@@ -10,13 +10,15 @@
     "create:blog": "node ./cmds/blog/command.js"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.68",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.68",
+    "@babel/traverse": "7.25.0",
+    "@docusaurus/core": "3.8.1",
+    "@docusaurus/preset-classic": "3.8.1",
+    "css-minimizer-webpack-plugin": "4.1.0",
     "classnames": "^2.2.6",
     "inquirer": "^7.1.0",
     "lodash.kebabcase": "^4.1.1",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-ui-cards": "^2.0.0",
     "react-vertical-timeline-component": "^3.0.0",
     "styled-components": "^5.2.1"
@@ -32,5 +34,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
