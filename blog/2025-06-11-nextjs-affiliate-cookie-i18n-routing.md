@@ -1,6 +1,3 @@
-
-
-````md
 ---
 title: Handling Affiliate Cookies and Internationalized Routing in Next.js Middleware
 slug: nextjs-affiliate-cookie-i18n-routing
@@ -136,6 +133,5 @@ export function middleware(request: NextRequest, event: NextFetchEvent) {
 Next.js middleware is powerful but requires careful response management when mixing tasks like cookie handling and i18n routing. By ensuring you modify the routing response rather than returning a separate one, you maintain seamless user experience with correct locale routing and affiliate tracking cookies set reliably.
 
  
-```
 
  
