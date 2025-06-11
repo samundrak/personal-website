@@ -13,7 +13,7 @@ In this article, I’ll walk you through a practical example where we:
 - Set an affiliate tracking cookie based on the request referer
 - Use `next-i18n-router` middleware to route users based on locale
 - Avoid common pitfalls that cause 404s or missing cookies
-
+<!-- truncate -->
 ---
 
 ## The Scenario
