@@ -1,11 +1,12 @@
 ---
-title: Automating Social Media: A Deep Dive into the socialcontentmanager Module
+title: "Automating Social Media: A Deep Dive into the socialcontentmanager Module"
 slug: automating-social-media-socialcontentmanager
 date: 2025-06-26
 author: samundrak
 author_title: JavaScript Dev
 author_url: https://github.com/samundrak
-author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4
+author_image_url: 
+ https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4
 tags: [fullstack, nestjs, react, data-visualization, nepal, politics, elections, prisma, docusaurus]
 sidebar_position: 1
 ---
@@ -25,9 +26,8 @@ sidebar_position: 1
 
   The ISocialMediaContent interface defines the fundamental structure and behavior expected from any content type within our system. It ensures that each content class can provide the necessary information (text, image,
   comments) for a social media post.
-<!--truncate-->
-
-
+<!-- truncate -->
+```
     1 // apps/api/src/socialcontentmanager/contents/ISocialMediaContent.ts
     2 export interface ISocialMediaContentResponse {
     3   content: string;
@@ -58,7 +58,7 @@ sidebar_position: 1
    28   }
    29 }
 
-
+```
 
   The ISocialMediaContentResponse interface specifies the expected output from a content generator: content (the main text of the post), an optional image URL, and an optional comment for replies or additional context.
   The getContent method, which all concrete content classes must implement, is responsible for fetching data and formatting it into the ISocialMediaContentResponse structure.
@@ -68,7 +68,7 @@ sidebar_position: 1
   To categorize and easily reference different content types, we use an enum:
 
 
-
+```
    1 // apps/api/src/socialcontentmanager/contents/SocialMediaContentTypeEnum.ts
    2 export enum SocialMediaContentTypeEnum {
    3   BIRTHDAY_POST = 'BIRTHDAY_POST',
@@ -78,7 +78,7 @@ sidebar_position: 1
    7   RANDOM_ELECTION_RESULTS = 'RANDOM_ELECTION_RESULTS',
    8   RECENTLY_ADDED_CONTENTS = 'RECENTLY_ADDED_CONTENTS',
    9 }
-
+```
 
   Example: The BirthdayPost Content Generator
 
@@ -86,7 +86,7 @@ sidebar_position: 1
   Let's look at a concrete example: the BirthdayPost class. This class is responsible for generating birthday greetings for leaders, complete with their details and a relevant image.
 
 
-
+```
     1 // apps/api/src/socialcontentmanager/contents/birthday-post.ts
     2 import { getImageUrlWithFallback } from "src/utils";
     3 import { ISocialMediaContent, ISocialMediaContentResponseOptions, ISocialMediaContentResponseType, } from "./ISocialMediaContent"
@@ -149,7 +149,7 @@ sidebar_position: 1
    60         return contents
    61     }
    62 }
-
+```
 
 
   The BirthdayPost class extends ISocialMediaContent and implements the getContent method. It fetches birthday leaders using this.params.leaders.getBirthdayLeadersRaw() (injected via dependency injection) and then
@@ -179,7 +179,7 @@ sidebar_position: 1
   The postToFacebook method handles simple text posts:
 
 
-
+```
     1 // apps/api/src/socialcontentmanager/socialcontentmanager.service.ts
     2 async postToFacebook(message: string): Promise<any> {
     3   try {
@@ -206,7 +206,7 @@ sidebar_position: 1
    24     throw error;
    25   }
    26 }
-
+```
 
 
   Posting Images to Facebook
@@ -214,7 +214,7 @@ sidebar_position: 1
   Posting images requires a two-step process: first, uploading the image, and then creating a post that attaches the uploaded image. Our system supports multiple images per post.
 
 
-
+```
     1 // apps/api/src/socialcontentmanager/socialcontentmanager.service.ts
     2 async postToFacebookWithImage({
     3   image,
@@ -277,7 +277,7 @@ sidebar_position: 1
    60     throw error;
    61   }
    62 }
-
+```
 
   Adding Comments to Facebook Posts
 
@@ -285,7 +285,7 @@ sidebar_position: 1
   To add a comment to an existing post, we use the post's ID:
 
 
-
+```
     1 // apps/api/src/socialcontentmanager/socialcontentmanager.service.ts
     2 async postComment(postId, commentText) {
     3   const url = `https://graph.facebook.com/${postId}/comments?message=${encodeURIComponent(
@@ -306,7 +306,7 @@ sidebar_position: 1
    18     console.log('Successfully posted comment:', data);
    19   }
    20 }
-
+```
 
   X (Twitter) Integration
 
@@ -324,8 +324,7 @@ sidebar_position: 1
 
   These are obtained from your Twitter Developer account and are used to initialize the TwitterApi client.
 
-
-
+```
    1 // apps/api/src/socialcontentmanager/socialcontentmanager.service.ts
    2 // ... inside constructor
    3 this.twitterClient = new TwitterApi({
@@ -335,13 +334,13 @@ sidebar_position: 1
    7   accessSecret: this.configService.getOrThrow('TWITTER_ACCESS_SECRET'),
    8 });
 
-
+```
   Posting to X (Twitter)
 
   The postToTwitter method handles both text and image posts, and crucially, manages replies to create threads.
 
 
-
+```
     1 // apps/api/src/socialcontentmanager/socialcontentmanager.service.ts
     2 async postToTwitter(
     3   post: ISocialMediaContentResponse,
@@ -415,7 +414,7 @@ sidebar_position: 1
    71     console.error('Error posting tweet:', err);
    72   }
    73 }
-
+```
 
   X (Twitter) API Limitations (Free Tier)
 
@@ -435,7 +434,7 @@ sidebar_position: 1
   specific times of day), this system would typically integrate with a cron job scheduler or a message queue.
 
 
-
+```
     1 // apps/api/src/socialcontentmanager/socialcontentmanager.service.ts
     2 async post(type: SocialMediaContentTypeEnum) {
     3   const contents = await this.getContentsByType(type);
@@ -467,7 +466,7 @@ sidebar_position: 1
    29 delay(ms) {
    30   return new Promise((resolve) => setTimeout(resolve, ms));
    31 }
-
+```
 
   The post method iterates through generated content, and postWithDelay introduces a configurable delay before actually sending the post to Facebook and Twitter. This simple mechanism prevents overwhelming social media
   feeds with a burst of posts.

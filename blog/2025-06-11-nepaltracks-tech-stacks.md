@@ -5,7 +5,8 @@ date: 2025-06-26
 author: samundrak
 author_title: JavaScript Dev
 author_url: https://github.com/samundrak
-author_image_url: https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4
+author_image_url: 
+ https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4
 tags: [fullstack, nestjs, react, data-visualization, nepal, politics, elections, prisma, docusaurus]
 sidebar_position: 1
 ---

@@ -1,16 +1,14 @@
 ---
-
 title: Building a Tag-Driven Metadata System for Political Domain Classification
 slug: tag-driven-metadata-system
 date: 2024-06-26
-tags: \[metadata, tags, classification, schema-design, taxonomy]
+tags: [metadata, tags, classification, schema-design, taxonomy]
 draft: false
 truncate: true
 author: samundrak
-author\_title: JavaScript Dev
-author\_url: [https://github.com/samundrak](https://github.com/samundrak)
-author\_image\_url: [https://avatars1.githubusercontent.com/u/3079452?s=460\&u=e5bd48488cb71b665ea5403192c6b8a963644a08\&v=4](https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+author_title: JavaScript Dev
+author_url: https://avatars1.githubusercontent.com/u/3079452?s=460\&u=e5bd48488cb71b665ea5403192c6b8a963644a08\&v=4
+---
 
 ## Overview
 

@@ -1,16 +1,14 @@
 ---
-
-title: Attaching Polls to Any Resource: A Flexible, Polymorphic System
+title: "Attaching Polls to Any Resource: A Flexible, Polymorphic System"
 slug: poll-system-polymorphic
 date: 2024-06-22
-tags: \[polls, voting, polymorphism, feedback, civic-tech]
+tags: [polls, voting, polymorphism, feedback, civic-tech]
 draft: false
 truncate: true
 author: samundrak
-author\_title: JavaScript Dev
-author\_url: [https://github.com/samundrak](https://github.com/samundrak)
-author\_image\_url: [https://avatars1.githubusercontent.com/u/3079452?s=460\&u=e5bd48488cb71b665ea5403192c6b8a963644a08\&v=4](https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+author_title: JavaScript Dev
+author_url: https://avatars1.githubusercontent.com/u/3079452?s=460\&u=e5bd48488cb71b665ea5403192c6b8a963644a08\&v=4
+---
 
 ## Overview
 

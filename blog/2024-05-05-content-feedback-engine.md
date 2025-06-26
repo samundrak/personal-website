@@ -1,15 +1,13 @@
 ---
-
 title: Structuring a Resource-Aware Content & Feedback Engine
 slug: content-feedback-engine
 date: 2024-05-05
-tags: \[content, feedback, rating-system, polymorphism, nestjs, prisma]
+tags: [content, feedback, rating-system, polymorphism, nestjs, prisma]
 draft: false
 author: samundrak
-author\_title: JavaScript Dev
-author\_url: [https://github.com/samundrak](https://github.com/samundrak)
-author\_image\_url: [https://avatars1.githubusercontent.com/u/3079452?s=460\&u=e5bd48488cb71b665ea5403192c6b8a963644a08\&v=4](https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4)
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+author_title: JavaScript Dev
+author_url: https://avatars1.githubusercontent.com/u/3079452?s=460\&u=e5bd48488cb71b665ea5403192c6b8a963644a08\&v=4
+---
 
 ## Overview
 
