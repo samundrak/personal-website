@@ -1,6 +1,6 @@
 ---
 
-title: Creating a Modular Monorepo: Frontend Meets Backend
+title: Creating a Modular Monorepo, Frontend Meets Backend
 slug: monorepo-setup-next-nest
 date: 2023-12-22
 tags: \[monorepo, fullstack, pnpm, shared-types, architecture]
