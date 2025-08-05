@@ -1,0 +1,150 @@
+---
+slug: a-comprehensive-guide-to-automated-deployments
+title: A Comprehensive Guide to Automated Deployments
+authors: [samundrak]
+tags: [ci/cd, deployment, automation, github-actions, docker, ansible, conventional-commits, semantic-versioning, release-please]
+author_title: JavaScript Dev
+author_url: https://github.com/samundrak
+author_image_url: 
+ https://avatars1.githubusercontent.com/u/3079452?s=460&u=e5bd48488cb71b665ea5403192c6b8a963644a08&v=4
+---
+
+In the fast-paced world of software development, a streamlined and automated deployment process is not just a luxury; it's a necessity. A well-architected CI/CD (Continuous Integration/Continuous Deployment) pipeline can significantly reduce the risk of human error, increase deployment frequency, and free up developers to focus on what they do best: building great software. This article will walk you through a complete, automated deployment workflow, from the moment you commit your code to its final destination in a production environment. We'll cover the use of Conventional Commits, Semantic Versioning, GitHub Actions, `release-please`, Docker, and Ansible to create a robust and reliable deployment pipeline.
+
+<!--truncate-->
+
+### The Foundation: Conventional Commits and Semantic Versioning
+
+Every great automated process is built on a solid foundation. In our case, that foundation is a standardized commit message format known as **Conventional Commits**. This specification provides a simple set of rules for creating an explicit commit history, which makes it easier to write automated tools on top of. The commit message format is simple:
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer]
+```
+
+The `<type>` is the most important part. It can be one of the following:
+
+*   **feat:** A new feature
+*   **fix:** A bug fix
+*   **chore:** Changes to the build process or auxiliary tools and libraries such as documentation generation
+*   **docs:** Documentation only changes
+*   **style:** Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+*   **refactor:** A code change that neither fixes a bug nor adds a feature
+*   **perf:** A code change that improves performance
+*   **test:** Adding missing tests or correcting existing tests
+
+This structured approach to commit messages is what allows us to automate the versioning of our software using **Semantic Versioning (SemVer)**. SemVer is a simple set of rules and requirements that dictate how version numbers are assigned and incremented. Given a version number MAJOR.MINOR.PATCH, you increment the:
+
+*   **MAJOR** version when you make incompatible API changes,
+*   **MINOR** version when you add functionality in a backwards-compatible manner, and
+*   **PATCH** version when you make backwards-compatible bug fixes.
+
+By adhering to Conventional Commits, we can automatically determine the next version number. A `feat` commit will result in a MINOR version bump, while a `fix` commit will result in a PATCH version bump. A commit with `BREAKING CHANGE` in the footer will result in a MAJOR version bump.
+
+### Automating Releases with `release-please` and GitHub Actions
+
+Now that we have a standardized way of writing commits and versioning our software, we can automate the release process. This is where `release-please` comes in. `release-please` is a tool that automates the process of creating release pull requests. It parses your commit history, determines the next version number based on the Conventional Commits specification, and creates a pull request with an updated `CHANGELOG.md` file.
+
+Here's how it works in a GitHub Actions workflow:
+
+```yaml
+# .github/workflows/release-please.yml
+on:
+  push:
+    branches:
+      - main
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          release-type: node
+          package-name: release-please-test
+```
+
+This workflow runs on every push to the `main` branch. The `release-please-action` will then create a pull request that looks something like this:
+
+> ## chore(main): release 1.2.3
+>
+> :robot: I have created a release *beep* *boop*
+> ---
+>
+> ### 1.2.3 (2025-08-05)
+>
+> ### Features
+>
+> * add new feature
+>
+> ### Bug Fixes
+>
+> * fix a bug
+> ---
+
+Once this pull request is merged, `release-please` will create a GitHub release with the corresponding version number and a git tag.
+
+### Building and Pushing Docker Images
+
+With our release process automated, the next step is to build and push our application as a Docker image. We can create another GitHub Actions workflow that is triggered when a new release is published.
+
+```yaml
+# .github/workflows/release.yml
+on:
+  release:
+    types: [created]
+name: release
+jobs:
+  build:
+    name: Build and Push Docker Image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Extract version from tag
+        id: tag
+        run: echo ::set-output name=version::${GITHUB_REF#refs/tags/}
+
+      - name: Build and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./apps/api/Dockerfile
+          push: true
+          tags: |
+            your-docker-repo/your-app:${{ steps.tag.outputs.version }}
+            your-docker-repo/your-app:latest
+```
+
+This workflow does the following:
+
+1.  **Checks out the code:** It starts by checking out the code from the repository.
+2.  **Logs in to Docker Hub:** It then logs in to a Docker registry (in this case, Docker Hub) using credentials stored in GitHub secrets.
+3.  **Extracts the version number:** It extracts the version number from the git tag that was created by `release-please`.
+4.  **Builds and pushes the Docker image:** Finally, it uses the `docker/build-push-action` to build the Docker image and push it to the registry. It tags the image with both the version number and `latest`.
+
+### Deploying with Ansible
+
+The final piece of the puzzle is deploying our newly built Docker image to our servers. While there are many tools available for this, we'll briefly touch on how you might use Ansible. Ansible is an open-source automation tool that can be used for configuration management, application deployment, and task automation.
+
+You would typically have an Ansible playbook that does the following:
+
+1.  **Pulls the new Docker image:** It connects to your server and pulls the new version of the Docker image from the registry.
+2.  **Stops the old container:** It stops the currently running container.
+3.  **Starts the new container:** It starts a new container with the updated image.
+
+This playbook can be triggered automatically after the Docker image is pushed, or it can be run manually.
+
+### Conclusion
+
+By combining the power of Conventional Commits, Semantic Versioning, GitHub Actions, `release-please`, Docker, and Ansible, you can create a fully automated deployment pipeline that is both reliable and efficient. This not only reduces the risk of human error but also allows your development team to focus on what they do best: building and shipping great software. While this article provides a high-level overview, the principles discussed here can be adapted and extended to fit the specific needs of your project. The key is to start with a solid foundation of standardized commits and versioning, and then build your automation on top of that.
